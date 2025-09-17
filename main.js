@@ -2,15 +2,14 @@ let myLibrary = [];
 const booksContainer = document.querySelector('#booksContainer');
 
 //book contructor
-function Book(title, author, pages, read, id) {
-    if (!new.target) {
-        throw Error("you must use the 'new constructor");
+class Book {
+    constructor (title, author, pages, read, id) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
 }
 
 function addBookToLibrary(title, author, pages, read) {
